@@ -8,6 +8,10 @@ class A02ViewModel : ViewModel() {
     private val _count = MutableLiveData(0)
     val count: LiveData<Int> = _count
 
+    fun setCount(count: Int) {
+        _count.value = count
+    }
+
     fun increment() {
         _count.value = _count.value?.plus(1)
     }

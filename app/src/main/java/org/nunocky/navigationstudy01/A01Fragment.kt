@@ -27,7 +27,9 @@ class A01Fragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.a02Fragment)
+            val action =
+                A01FragmentDirections.actionA01FragmentToA02Fragment(count = viewModel.count.value!!)
+            findNavController().navigate(action)
         }
 
         binding.btnDec.setOnClickListener {

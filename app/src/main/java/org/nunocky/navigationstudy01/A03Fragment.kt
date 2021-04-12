@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import org.nunocky.navigationstudy01.databinding.A03FragmentBinding
 
 class A03Fragment : Fragment() {
@@ -14,6 +15,8 @@ class A03Fragment : Fragment() {
     companion object {
         fun newInstance() = A03Fragment()
     }
+
+    private val args: A03FragmentArgs by navArgs()
 
     private val viewModel: A03ViewModel by viewModels()
     private lateinit var binding: A03FragmentBinding
@@ -39,5 +42,10 @@ class A03Fragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.setCount(args.count)
     }
 }

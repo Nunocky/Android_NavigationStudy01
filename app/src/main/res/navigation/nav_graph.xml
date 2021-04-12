@@ -18,10 +18,22 @@
         android:id="@+id/a02Fragment"
         android:name="org.nunocky.navigationstudy01.A02Fragment"
         android:label="a02_fragment"
-        tools:layout="@layout/a02_fragment" />
+        tools:layout="@layout/a02_fragment" >
+        <argument
+            android:name="count"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_a02Fragment_to_a03Fragment"
+            app:destination="@id/a03Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/a03Fragment"
         android:name="org.nunocky.navigationstudy01.A03Fragment"
         android:label="a03_fragment"
-        tools:layout="@layout/a03_fragment" />
+        tools:layout="@layout/a03_fragment" >
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
 </navigation>
