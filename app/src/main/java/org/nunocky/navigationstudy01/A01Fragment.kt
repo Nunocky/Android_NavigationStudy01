@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import org.nunocky.navigationstudy01.databinding.A01FragmentBinding
 
@@ -15,6 +16,7 @@ class A01Fragment : Fragment() {
         fun newInstance() = A01Fragment()
     }
 
+    private lateinit var activityViewModel: MainViewModel
     private val viewModel: A01ViewModel by viewModels()
     private lateinit var binding: A01FragmentBinding
 
@@ -22,6 +24,8 @@ class A01Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        activityViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
         binding = A01FragmentBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
@@ -41,5 +45,15 @@ class A01Fragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activityViewModel.quitButtonVisible.value = false
+    }
+
+    override fun onPause() {
+        super.onPause()
+        activityViewModel.quitButtonVisible.value = true
     }
 }
