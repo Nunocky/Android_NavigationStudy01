@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/a01Fragment">
+
+    <fragment
+        android:id="@+id/a01Fragment"
+        android:name="org.nunocky.navigationstudy01.A01Fragment"
+        android:label="a01_fragment"
+        tools:layout="@layout/a01_fragment" >
+        <action
+            android:id="@+id/action_a01Fragment_to_a02Fragment"
+            app:destination="@id/a02Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/a02Fragment"
+        android:name="org.nunocky.navigationstudy01.A02Fragment"
+        android:label="a02_fragment"
+        tools:layout="@layout/a02_fragment" />
+    <fragment
+        android:id="@+id/a03Fragment"
+        android:name="org.nunocky.navigationstudy01.A03Fragment"
+        android:label="a03_fragment"
+        tools:layout="@layout/a03_fragment" />
+</navigation>
