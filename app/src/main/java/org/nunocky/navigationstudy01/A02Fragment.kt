@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import org.nunocky.navigationstudy01.databinding.FragmentA02Binding
+import org.nunocky.navigationstudy01.util.autoCleared
 
 class A02Fragment : Fragment() {
 
@@ -26,9 +27,7 @@ class A02Fragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.btnNext.setOnClickListener {
-            val action =
-                A02FragmentDirections.actionA02FragmentToSubNav(destination = R.id.a03Fragment)
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_a02Fragment_to_sub1_X1)
         }
 
         binding.btnPrev.setOnClickListener {

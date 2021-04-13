@@ -1,4 +1,4 @@
-package org.nunocky.navigationstudy01
+package org.nunocky.navigationstudy01.util
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver

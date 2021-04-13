@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/a01Fragment">
 
+    <!-- 画面1 -->
     <fragment
         android:id="@+id/a01Fragment"
         android:name="org.nunocky.navigationstudy01.A01Fragment"
@@ -14,6 +15,8 @@
             android:id="@+id/action_a01Fragment_to_a02Fragment"
             app:destination="@id/a02Fragment" />
     </fragment>
+
+    <!-- 画面2 -->
     <fragment
         android:id="@+id/a02Fragment"
         android:name="org.nunocky.navigationstudy01.A02Fragment"
@@ -24,14 +27,35 @@
             android:defaultValue="0"
             app:argType="integer" />
         <action
-            android:id="@+id/action_a02Fragment_to_sub_nav"
-            app:destination="@id/sub_nav">
-            <argument
-                android:name="destination"
-                app:argType="reference" />
-        </action>
+            android:id="@+id/action_a02Fragment_to_sub1_X1"
+            app:destination="@id/sub1_X1" />
 
     </fragment>
+
+    <!-- X1~X2 1回目 -->
+    <fragment
+        android:id="@+id/sub1_X1"
+        android:name="org.nunocky.navigationstudy01.SubX1Fragment"
+        android:label="fragment_sub_x1"
+        tools:layout="@layout/fragment_sub_x1">
+
+        <action
+            android:id="@+id/action_sub1_X1_to_sub1_X2"
+            app:destination="@id/sub1_X2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sub1_X2"
+        android:name="org.nunocky.navigationstudy01.SubX2Fragment"
+        android:label="fragment_sub_x2"
+        tools:layout="@layout/fragment_sub_x2">
+
+        <action
+            android:id="@+id/action_sub1_X2_to_a03Fragment"
+            app:destination="@id/a03Fragment" />
+    </fragment>
+
+    <!-- 画面3 -->
     <fragment
         android:id="@+id/a03Fragment"
         android:name="org.nunocky.navigationstudy01.A03Fragment"
@@ -42,23 +66,44 @@
             android:defaultValue="0"
             app:argType="integer" />
         <action
-            android:id="@+id/action_a03Fragment_to_sub_nav"
-            app:destination="@id/sub_nav">
-            <argument
-                android:name="destination"
-                app:argType="reference" />
-        </action>
+            android:id="@+id/action_a03Fragment_to_sub2_X1"
+            app:destination="@id/sub2_X1" />
     </fragment>
 
+    <!-- X1~X2 2回目 -->
+    <fragment
+        android:id="@+id/sub2_X1"
+        android:name="org.nunocky.navigationstudy01.SubX1Fragment"
+        android:label="fragment_sub_x1"
+        tools:layout="@layout/fragment_sub_x1">
+
+        <action
+            android:id="@+id/action_sub2_X1_to_sub2_X2"
+            app:destination="@id/sub2_X2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sub2_X2"
+        android:name="org.nunocky.navigationstudy01.SubX2Fragment"
+        android:label="fragment_sub_x2"
+        tools:layout="@layout/fragment_sub_x2">
+
+        <action
+            android:id="@+id/action_sub2_X2_to_a04Fragment"
+            app:destination="@id/a04Fragment" />
+    </fragment>
+
+    <!-- 画面4 -->
     <fragment
         android:id="@+id/a04Fragment"
         android:name="org.nunocky.navigationstudy01.A04Fragment"
         android:label="fragment_a04"
         tools:layout="@layout/fragment_a04" />
 
+    <!-- グローバルアクション -->
     <action
         android:id="@+id/action_global_a01Fragment"
         app:destination="@id/a01Fragment" />
 
-    <include app:graph="@navigation/sub_nav" />
+
 </navigation>

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.nunocky.navigationstudy01.databinding.FragmentA04Binding
 import org.nunocky.navigationstudy01.databinding.FragmentSubX2Binding
+import org.nunocky.navigationstudy01.util.autoCleared
 
 /**
  * A simple [Fragment] subclass.

@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import org.nunocky.navigationstudy01.databinding.FragmentSubX1Binding
+import org.nunocky.navigationstudy01.util.autoCleared
 
 /**
  * A simple [Fragment] subclass.
@@ -15,30 +15,28 @@ import org.nunocky.navigationstudy01.databinding.FragmentSubX1Binding
  * create an instance of this fragment.
  */
 class SubX1Fragment : Fragment() {
-    private var _binding: FragmentSubX1Binding? = null
-    private val binding get() = _binding!!
-
-    private val args: SubX1FragmentArgs by navArgs()
+    private var binding by autoCleared<FragmentSubX1Binding>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSubX1Binding.inflate(inflater, container, false)
+        binding = FragmentSubX1Binding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 
         binding.btnNext.setOnClickListener {
-            val action =
-                SubX1FragmentDirections.actionSubX1FragmentToSubX2Fragment(destination = args.destination)
-            findNavController().navigate(action)
+
+            when (findNavController().currentDestination?.id) {
+                R.id.sub1_X1 -> {
+                    findNavController().navigate(R.id.action_sub1_X1_to_sub1_X2)
+                }
+
+                R.id.sub2_X1 -> {
+                    findNavController().navigate(R.id.action_sub2_X1_to_sub2_X2)
+                }
+            }
         }
 
         return binding.root
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

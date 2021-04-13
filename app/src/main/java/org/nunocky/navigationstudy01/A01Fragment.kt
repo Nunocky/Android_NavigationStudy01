@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import org.nunocky.navigationstudy01.databinding.FragmentA01Binding
+import org.nunocky.navigationstudy01.util.autoCleared
 
 class A01Fragment : Fragment() {
 
