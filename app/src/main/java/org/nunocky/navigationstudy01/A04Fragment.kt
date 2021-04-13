@@ -16,10 +16,6 @@ import org.nunocky.navigationstudy01.databinding.FragmentA04Binding
 class A04Fragment : Fragment() {
     private lateinit var binding: FragmentA04Binding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
