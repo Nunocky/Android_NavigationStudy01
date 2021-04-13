@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity() {
             val navController = navHostFragment.navController
 
             // グローバルナビゲーションで移動するとバックスタックに保持されている状態はリセットされる
-            navController.navigate(R.id.action_global_a01Fragment)
+            // navController.navigate(R.id.action_global_a01Fragment)
+
+            // 先頭に戻るだけなら popBackStackで充分そう (状態は保持されている)
+            navController.popBackStack(R.id.a01Fragment, false)
         }
     }
 }

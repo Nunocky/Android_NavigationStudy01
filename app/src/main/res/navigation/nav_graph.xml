@@ -61,10 +61,7 @@
         android:name="org.nunocky.navigationstudy01.A03Fragment"
         android:label="a03_fragment"
         tools:layout="@layout/fragment_a03">
-        <argument
-            android:name="count"
-            android:defaultValue="0"
-            app:argType="integer" />
+
         <action
             android:id="@+id/action_a03Fragment_to_sub2_X1"
             app:destination="@id/sub2_X1" />

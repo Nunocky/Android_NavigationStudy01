@@ -9,11 +9,6 @@ import androidx.navigation.fragment.findNavController
 import org.nunocky.navigationstudy01.databinding.FragmentSubX1Binding
 import org.nunocky.navigationstudy01.util.autoCleared
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SubX1Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SubX1Fragment : Fragment() {
     private var binding by autoCleared<FragmentSubX1Binding>()
 
