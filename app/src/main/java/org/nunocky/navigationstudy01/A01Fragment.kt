@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import org.nunocky.navigationstudy01.databinding.A01FragmentBinding
+import org.nunocky.navigationstudy01.databinding.FragmentA01Binding
 
 class A01Fragment : Fragment() {
 
@@ -18,7 +18,7 @@ class A01Fragment : Fragment() {
 
     private lateinit var activityViewModel: MainViewModel
     private val viewModel: A01ViewModel by viewModels()
-    private lateinit var binding: A01FragmentBinding
+    private lateinit var binding: FragmentA01Binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class A01Fragment : Fragment() {
     ): View {
         activityViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-        binding = A01FragmentBinding.inflate(inflater, container, false)
+        binding = FragmentA01Binding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 

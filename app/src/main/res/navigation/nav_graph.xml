@@ -9,7 +9,7 @@
         android:id="@+id/a01Fragment"
         android:name="org.nunocky.navigationstudy01.A01Fragment"
         android:label="a01_fragment"
-        tools:layout="@layout/a01_fragment">
+        tools:layout="@layout/fragment_a01">
         <action
             android:id="@+id/action_a01Fragment_to_a02Fragment"
             app:destination="@id/a02Fragment" />
@@ -18,26 +18,47 @@
         android:id="@+id/a02Fragment"
         android:name="org.nunocky.navigationstudy01.A02Fragment"
         android:label="a02_fragment"
-        tools:layout="@layout/a02_fragment">
+        tools:layout="@layout/fragment_a02">
         <argument
             android:name="count"
             android:defaultValue="0"
             app:argType="integer" />
         <action
-            android:id="@+id/action_a02Fragment_to_a03Fragment"
-            app:destination="@id/a03Fragment" />
+            android:id="@+id/action_a02Fragment_to_sub_nav"
+            app:destination="@id/sub_nav">
+            <argument
+                android:name="destination"
+                app:argType="reference" />
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/a03Fragment"
         android:name="org.nunocky.navigationstudy01.A03Fragment"
         android:label="a03_fragment"
-        tools:layout="@layout/a03_fragment">
+        tools:layout="@layout/fragment_a03">
         <argument
             android:name="count"
             android:defaultValue="0"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_a03Fragment_to_sub_nav"
+            app:destination="@id/sub_nav">
+            <argument
+                android:name="destination"
+                app:argType="reference" />
+        </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/a04Fragment"
+        android:name="org.nunocky.navigationstudy01.A04Fragment"
+        android:label="fragment_a04"
+        tools:layout="@layout/fragment_a04" />
+
     <action
         android:id="@+id/action_global_a01Fragment"
         app:destination="@id/a01Fragment" />
+
+    <include app:graph="@navigation/sub_nav" />
 </navigation>

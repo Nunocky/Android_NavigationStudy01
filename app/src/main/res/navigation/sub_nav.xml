@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sub_nav"
+    app:startDestination="@id/subX1Fragment">
+
+    <argument
+        android:name="destination"
+        app:argType="reference" />
+
+    <fragment
+        android:id="@+id/subX1Fragment"
+        android:name="org.nunocky.navigationstudy01.SubX1Fragment"
+        android:label="fragment_sub_x1"
+        tools:layout="@layout/fragment_sub_x1">
+
+        <argument
+            android:name="destination"
+            app:argType="reference" />
+
+        <action
+            android:id="@+id/action_subX1Fragment_to_subX2Fragment"
+            app:destination="@id/subX2Fragment">
+
+            <argument
+                android:name="destination"
+                app:argType="reference" />
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/subX2Fragment"
+        android:name="org.nunocky.navigationstudy01.SubX2Fragment"
+        android:label="fragment_sub_x2"
+        tools:layout="@layout/fragment_sub_x2">
+
+        <argument
+            android:name="destination"
+            app:argType="reference" />
+    </fragment>
+</navigation>

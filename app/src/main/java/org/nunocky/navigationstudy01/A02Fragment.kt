@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import org.nunocky.navigationstudy01.databinding.A02FragmentBinding
+import org.nunocky.navigationstudy01.databinding.FragmentA02Binding
 
 class A02Fragment : Fragment() {
 
@@ -19,19 +19,19 @@ class A02Fragment : Fragment() {
     private val args: A02FragmentArgs by navArgs()
 
     private val viewModel: A02ViewModel by viewModels()
-    private lateinit var binding: A02FragmentBinding
+    private lateinit var binding: FragmentA02Binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = A02FragmentBinding.inflate(inflater, container, false)
+        binding = FragmentA02Binding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         binding.btnNext.setOnClickListener {
             val action =
-                A02FragmentDirections.actionA02FragmentToA03Fragment(count = viewModel.count.value!!)
+                A02FragmentDirections.actionA02FragmentToSubNav(destination = R.id.a03Fragment)
             findNavController().navigate(action)
         }
 
