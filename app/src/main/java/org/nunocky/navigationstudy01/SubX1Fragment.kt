@@ -15,7 +15,8 @@ import org.nunocky.navigationstudy01.databinding.FragmentSubX1Binding
  * create an instance of this fragment.
  */
 class SubX1Fragment : Fragment() {
-    private lateinit var binding: FragmentSubX1Binding
+    private var _binding: FragmentSubX1Binding? = null
+    private val binding get() = _binding!!
 
     private val args: SubX1FragmentArgs by navArgs()
 
@@ -23,7 +24,7 @@ class SubX1Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSubX1Binding.inflate(inflater, container, false)
+        _binding = FragmentSubX1Binding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 
         binding.btnNext.setOnClickListener {
@@ -33,6 +34,11 @@ class SubX1Fragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

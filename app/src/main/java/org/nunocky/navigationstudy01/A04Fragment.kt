@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.nunocky.navigationstudy01.databinding.FragmentA04Binding
+import org.nunocky.navigationstudy01.databinding.FragmentSubX2Binding
 
 /**
  * A simple [Fragment] subclass.
@@ -14,7 +15,7 @@ import org.nunocky.navigationstudy01.databinding.FragmentA04Binding
  * create an instance of this fragment.
  */
 class A04Fragment : Fragment() {
-    private lateinit var binding: FragmentA04Binding
+    private var binding by autoCleared<FragmentA04Binding>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

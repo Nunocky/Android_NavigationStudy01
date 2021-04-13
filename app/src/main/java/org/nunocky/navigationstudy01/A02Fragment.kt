@@ -12,14 +12,10 @@ import org.nunocky.navigationstudy01.databinding.FragmentA02Binding
 
 class A02Fragment : Fragment() {
 
-    companion object {
-        fun newInstance() = A02Fragment()
-    }
-
     private val args: A02FragmentArgs by navArgs()
 
     private val viewModel: A02ViewModel by viewModels()
-    private lateinit var binding: FragmentA02Binding
+    private var binding by autoCleared<FragmentA02Binding>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

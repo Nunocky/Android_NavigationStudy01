@@ -19,7 +19,7 @@ class A03Fragment : Fragment() {
     private val args: A03FragmentArgs by navArgs()
 
     private val viewModel: A03ViewModel by viewModels()
-    private lateinit var binding: FragmentA03Binding
+    private var binding by autoCleared<FragmentA03Binding>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
